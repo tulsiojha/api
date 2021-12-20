@@ -1,8 +1,11 @@
 const express = require('express');
 const mysql = require("mysql");
 const bodyParser = require("body-parser");
+const { init } = require('./Utils/fb');
 
 const app = express();
+
+init()
 
 app.use(function(req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -20,7 +23,7 @@ app.use(bodyParser.json());
 var appRouter = require("./routes/app.routes")
 var userRouter = require("./routes/user.router")
 var formRouter = require("./routes/form.router")
-var datasetRouter = require("./routes/dataset.router")
+var datasetRouter = require("./routes/dataset.router");
 
 
 
